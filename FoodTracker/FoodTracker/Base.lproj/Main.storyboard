@@ -19,42 +19,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gjP-5l-Y3m">
-                                <rect key="frame" x="18" y="50" width="339" height="415.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gjP-5l-Y3m">
+                                <rect key="frame" x="18" y="50" width="339" height="449.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-tG-OjW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Default Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-tG-OjW">
                                         <rect key="frame" x="0.0" y="0.0" width="96.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-Xp-c5h">
-                                        <rect key="frame" x="0.0" y="25.5" width="339" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-Xp-c5h">
+                                        <rect key="frame" x="0.0" y="30.5" width="339" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fk-T8-1wa">
-                                        <rect key="frame" x="0.0" y="60.5" width="109" height="30"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="109" height="30"/>
                                         <state key="normal" title="Set Default Text"/>
                                         <connections>
                                             <action selector="addMealText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aOt-pK-Ti0"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="J8r-BT-G0x">
-                                        <rect key="frame" x="0.0" y="95.5" width="320" height="320"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="J8r-BT-G0x">
+                                        <rect key="frame" x="0.0" y="110.5" width="339" height="339"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="J8r-BT-G0x" secondAttribute="height" multiplier="1:1" id="Jn3-Wc-uDc"/>
                                             <constraint firstAttribute="width" secondItem="J8r-BT-G0x" secondAttribute="height" multiplier="1:1" id="pGq-w6-IVY"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="1hJ-W4-ZOV" appends="YES" id="fXf-Kp-b20"/>
+                                            <outletCollection property="gestureRecognizers" destination="cj9-j5-Yx8" appends="YES" id="dvX-Jd-J1e"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="tgc-Xp-c5h" firstAttribute="width" secondItem="gjP-5l-Y3m" secondAttribute="width" id="Ek3-ez-q1L"/>
+                                    <constraint firstItem="J8r-BT-G0x" firstAttribute="centerX" secondItem="gjP-5l-Y3m" secondAttribute="centerX" id="olS-Nx-XJx"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -73,12 +75,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="1hJ-W4-ZOV">
+                <tapGestureRecognizer id="cj9-j5-Yx8">
                     <connections>
-                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="fcq-vO-iFz"/>
+                        <action selector="onImageTapped:" destination="BYZ-38-t0r" id="Uen-oo-s6j"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="210" height="240"/>
+    </resources>
 </document>

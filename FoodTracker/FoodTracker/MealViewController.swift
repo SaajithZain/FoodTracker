@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var mealTextField: UITextField!
-    @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var mealImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        mealLabel.text = mealTextField.text
+        
     }
     
     //MARK: UIImagePickerControllerDelegate
